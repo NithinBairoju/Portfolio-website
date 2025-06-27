@@ -29,6 +29,16 @@
         background-size: 40px 40px;
         pointer-events: none;
       }
+      /* Hero text styling */
+      .hero-text {
+        background: linear-gradient(135deg, #8b5cf6, #06b6d4, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 300% 300%;
+        animation: gradient-shift 4s ease-in-out infinite;
+        text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+      }
 
       .gradient-text {
         background: linear-gradient(135deg, #8b5cf6, #06b6d4, #ec4899);
@@ -250,10 +260,8 @@
     </nav>
 
     <section
-      class="relative min-h-screen bg-transparent overflow-hidden flex flex-col justify-end items-center pt-10"
+      class="relative h-screen bg-transparent overflow-hidden flex items-end justify-center"
     >
-      <div class="grid-bg"></div>
-
       <!-- Background Effects -->
       <div class="absolute inset-0">
         <div
@@ -286,13 +294,24 @@
         ></div>
       </div>
 
-      <div class="font-bold text-8xl text-center opacity-90 px-20">
-        FULLSTACK DEVELOPER • JAVA
+      <!-- Hero Text - Positioned behind image -->
+      <div class="absolute top-[10%] left-0 w-full flex justify-start z-10">
+        <div
+          class="hero-text font-bold text-6xl md:text-7xl lg:text-8xl text-center opacity-70 px-4 select-none"
+        >
+          FULLSTACK DEVELOPER JAVA
+        </div>
       </div>
 
-      <!-- Profile Image Centered at Bottom -->
-      <div class="relative w-auto h-[70vh] max-w-[90vw] overflow-hidden z-10">
-        <img src="portfolio-img.png" alt="Your Photo" class="w-full h-full" />
+      <!-- Profile Image - At bottom with higher z-index -->
+      <div
+        class="relative w-auto h-[75vh] md:h-[85vh] max-w-[90vw] overflow-hidden z-20 mb-0"
+      >
+        <img
+          src="portfolio-img.png  "
+          alt="Your Photo"
+          class="w-full h-full object-cover object-bottom"
+        />
       </div>
     </section>
 
@@ -834,6 +853,20 @@
               >
                 <path
                   d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </div>
+            <!-- Email Card -->
+            <div
+              class="animate-float-3 social-card hover-glow bg-dark-light/30 p-6 rounded-2xl w-20 h-20 flex items-center justify-center cursor-pointer group"
+            >
+              <svg
+                class="w-10 h-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 13.065L1.5 6.75v10.5h21V6.75L12 13.065zM12 11.25L1.5 4.5h21L12 11.25z"
                 />
               </svg>
             </div>
