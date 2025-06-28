@@ -29,6 +29,88 @@
         background-size: 40px 40px;
         pointer-events: none;
       }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .particle-1 {
+        animation: float 3s ease-in-out infinite;
+      }
+      .particle-2 {
+        animation: float 4s ease-in-out infinite 1s;
+      }
+      .particle-3 {
+        animation: float 3.5s ease-in-out infinite 2s;
+      }
+      .particle-4 {
+        animation: float 4.5s ease-in-out infinite 0.5s;
+      }
+      .particle-5 {
+        animation: float 3.2s ease-in-out infinite 1.5s;
+      }
+      .particle-6 {
+        animation: float 3.8s ease-in-out infinite 2.5s;
+      }
+
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.95),
+          rgba(16, 185, 129, 0.95)
+        );
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .project-card:hover .project-overlay {
+        transform: translateY(0);
+      }
+
+      .github-btn {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .github-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .skills-container {
+        max-width: 100%;
+        overflow: hidden;
+      }
       /* Hero text styling */
       .hero-text {
         background: linear-gradient(135deg, #8b5cf6, #06b6d4, #ec4899);
@@ -128,6 +210,57 @@
       }
       .particle-6 {
         animation: particle-float 10s ease-in-out infinite 2.5s;
+      }
+      * Animation for popup */ .popup-enter {
+        animation: popupEnter 0.3s ease-out;
+      }
+
+      .popup-exit {
+        animation: popupExit 0.2s ease-in;
+      }
+
+      @keyframes popupEnter {
+        from {
+          opacity: 0;
+          transform: scale(0.9) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes popupExit {
+        from {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: scale(0.9) translateY(20px);
+        }
+      }
+
+      /* Hover effects for contact items */
+      .contact-item {
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateX(8px);
+        background: rgba(55, 65, 81, 0.3);
+      }
+
+      /* Gradient border effect */
+      .gradient-border {
+        background: linear-gradient(135deg, #3b82f6, #10b981, #8b5cf6);
+        padding: 1px;
+        border-radius: 1rem;
+      }
+
+      .gradient-border-inner {
+        background: rgba(55, 65, 81, 0.95);
+        border-radius: calc(1rem - 1px);
       }
 
       /* Responsive adjustments */
@@ -242,24 +375,226 @@
     </script>
   </head>
   <body class="bg-dark text-white overflow-x-hidden">
+    <div
+      id="contactPopup"
+      class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[999] flex items-center justify-center hidden p-4"
+      onclick="closeIfClickedOutside(event)"
+    >
+      <div class="gradient-border popup-enter mx-4 my-4 max-w-md w-full">
+        <div class="gradient-border-inner p-8 text-white shadow-2xl relative">
+          <!-- Close Button -->
+          <button
+            onclick="toggleContactCard()"
+            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-red-500/20 hover:bg-red-500/30 text-red-400 hover:text-red-300 transition-all duration-200 hover:scale-110"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <h3
+              class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"
+            >
+              Let's Connect
+            </h3>
+            <p class="text-gray-400 text-sm mt-2">
+              Get in touch through any of these channels
+            </p>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="space-y-4">
+            <!-- Email -->
+            <div
+              class="contact-item p-4 rounded-lg border border-dark-lighter/30 hover:border-yellow-400/50"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-xs text-gray-400 uppercase tracking-wide">
+                    EMAIL
+                  </p>
+                  <a
+                    href="mailto:nithinbairoju123@gmail.com"
+                    class="text-yellow-400 hover:text-yellow-300 font-medium text-sm transition-colors"
+                  >
+                    nithinbairoju123@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div
+              class="contact-item p-4 rounded-lg border border-dark-lighter/30 hover:border-cyan-400/50"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <svg
+                    class="w-5 h-5 text-cyan-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-xs text-gray-400 uppercase tracking-wide">
+                    LINKEDIN
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/nithin-bairoju-155503243/"
+                    target="_blank"
+                    class="text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+                  >
+                    linkedin.com/in/nithin-bairoju-155503243/
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div
+              class="contact-item p-4 rounded-lg border border-dark-lighter/30 hover:border-purple-400/50"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <svg
+                    class="w-5 h-5 text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-xs text-gray-400 uppercase tracking-wide">
+                    GITHUB
+                  </p>
+                  <a
+                    href="https://github.com/NithinBairoju"
+                    target="_blank"
+                    class="text-purple-400 hover:text-purple-300 font-medium text-sm transition-colors"
+                  >
+                    github.com/NithinBairoju
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div
+              class="contact-item p-4 rounded-lg border border-dark-lighter/30 hover:border-pink-400/50"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <svg
+                    class="w-5 h-5 text-pink-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-xs text-gray-400 uppercase tracking-wide">
+                    PHONE
+                  </p>
+                  <span class="text-pink-400 font-medium text-sm"
+                    >+91-9390817004</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="mt-8 pt-6 border-t border-dark-lighter/30 text-center">
+            <p class="text-gray-400 text-xs">
+              Looking forward to connecting with you!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bottom Glassy Navbar -->
     <nav
-      class="bg-transparent fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"
+      class="bg-transparent fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-full px-4"
     >
       <div
-        class="backdrop-blur-lg bg-dark-light/40 border border-dark-lighter/60 shadow-xl rounded-full px-10 py-3 flex items-center space-x-20 transition-all hover:shadow-2xl hover:scale-105"
+        class="mx-auto max-w-md backdrop-blur-lg bg-dark-light/40 border border-dark-lighter/60 shadow-xl rounded-full px-4 py-3 flex items-center justify-between transition-all hover:shadow-2xl hover:scale-105"
       >
         <!-- Name -->
-        <span class="text-white font-semibold text-base">Nithin Bairoju</span>
-
-        <!-- Resume Button -->
-        <a
-          href="/path-to-your-resume.pdf"
-          download
-          class="bg-primary hover:bg-primary/80 text-white font-medium text-sm px-4 py-2 rounded-full transition-colors shadow-sm"
+        <span
+          class="text-white font-semibold text-sm sm:text-base whitespace-nowrap"
         >
-          <i class="fas fa-download mr-2"></i> Resume
-        </a>
+          Nithin Bairoju
+        </span>
+
+        <!-- Buttons Container -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Resume Button -->
+          <a
+            href="/path-to-your-resume.pdf"
+            download
+            class="bg-primary hover:bg-primary/80 text-white font-medium text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 rounded-full transition-colors shadow-sm whitespace-nowrap"
+          >
+            Resume
+          </a>
+
+          <!-- Contact Button -->
+          <button
+            onclick="toggleContactCard()"
+            class="bg-secondary hover:bg-secondary/80 text-white font-medium text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 rounded-full transition-colors shadow-sm whitespace-nowrap"
+          >
+            Contact
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -597,8 +932,13 @@
             </div>
 
             <p class="text-gray-400 mb-4">
-              Created and maintained APIs modules, backend APIs, React-based
-              dashboards, and agile working workflows.
+              Contributed to the development of a full-stack News Portal
+              application. Focused primarily on system design and backend
+              development using Spring Boot, where I architected scalable REST
+              APIs, implemented secure authentication, and designed the data
+              model with MySQL. Collaborated in an Agile environment, regularly
+              integrating backend modules with a React-based dashboard, and
+              ensured efficient API communication and modular code practices.
             </p>
 
             <div class="flex flex-wrap gap-2">
@@ -615,6 +955,10 @@
                 >API Development</span
               >
               <span
+                class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm"
+                >System Design
+              </span>
+              <span
                 class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm"
                 >Agile</span
               >
@@ -624,7 +968,6 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section
       id="projects"
       class="py-20 bg-transparent text-white relative overflow-hidden"
@@ -660,121 +1003,227 @@
           class="particle-6 absolute top-1/3 right-12 w-1 h-1 bg-pink-300 rounded-full"
         ></div>
       </div>
+
       <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-16">
           <span class="text-primary">Projects</span>
         </h2>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Project 1 -->
+        <!-- Vertical Cards Container -->
+        <div class="flex flex-col gap-0 w-full">
+          <!-- Project 3: TRACW Banking -->
           <div
-            class="bg-dark-light rounded-xl overflow-hidden border-l-4 border-l-primary border border-dark-lighter hover:scale-105 transition-all"
+            class="project-card w-full bg-transparent border-l-4 border-l-accent border-b-2 border-dark-lighter"
           >
-            <div
-              class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center"
-            >
-              <div class="text-6xl text-primary/50">🏦</div>
-            </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">
-                Tracor - Secure Banking Application
-              </h3>
-              <p class="text-gray-400 mb-4">
-                A secure banking application with role-based authentication and
-                data protection.
+              <h3 class="text-xl font-bold mb-2">TRACW – Banking System</h3>
+              <p class="text-white/90 mb-4 leading-relaxed max-w-2xl">
+                A secure transaction and account management system featuring
+                money transfers, comprehensive transaction history, and Spring
+                Security for robust user protection.
               </p>
-              <div class="flex space-x-2 mb-4">
+              <div class="flex flex-wrap gap-2">
                 <span
-                  class="bg-primary/20 text-primary px-2 py-1 rounded text-sm"
+                  class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
                   >Spring Boot</span
                 >
                 <span
-                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-sm"
-                  >Spring Security</span
+                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs"
+                  >Java 21</span
                 >
-                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm"
+                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs"
+                  >MySQL</span
+                >
+                <span
+                  class="bg-red-500/20 text-red-300 px-2 py-1 rounded text-xs"
+                  >Security</span
+                >
+              </div>
+            </div>
+
+            <!-- Overlay -->
+            <div
+              class="project-overlay"
+              onclick="window.open('https://github.com/NithinBairoju/tracw', '_blank')"
+            >
+              <div
+                class="github-link text-white px-8 py-4 rounded-lg text-xl font-bold flex items-center justify-between cursor-pointer transition-colors duration-200 w-full"
+              >
+                <div class="flex items-center gap-3">
+                  <p class="text-4xl">View on GitHub</p>
+                </div>
+                <svg
+                  class="w-10 h-10 ml-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V8h7V6H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h7v-2z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Project 1: News App -->
+          <div
+            class="project-card w-full bg-transparent border-l-4 border-l-primary border-b-2 border-dark-lighter"
+          >
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">News App</h3>
+              <p class="text-white/90 mb-6 leading-relaxed max-w-2xl">
+                A comprehensive news portal featuring category-based browsing,
+                secure user authentication, and a modern responsive UI built
+                with Next.js frontend and Node.js backend.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
+                  >Next.js</span
+                >
+                <span
+                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs"
+                  >Node.js</span
+                >
+                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs"
+                  >MySQL</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs"
                   >JWT</span
                 >
               </div>
-              <button
-                class="bg-primary hover:bg-primary/80 px-4 py-2 rounded transition-colors"
+            </div>
+
+            <!-- Overlay -->
+            <div
+              class="project-overlay"
+              onclick="window.open('https://github.com/NithinBairoju/newsApp', '_blank')"
+            >
+              <div
+                class="github-link text-white px-8 py-4 rounded-lg text-xl font-bold flex items-center justify-between cursor-pointer transition-colors duration-200 w-full"
               >
-                View Project
-              </button>
+                <div class="flex items-center gap-3">
+                  <p class="text-4xl">View on GitHub</p>
+                </div>
+                <svg
+                  class="w-10 h-10 ml-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V8h7V6H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h7v-2z"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 2: To-Do Manager -->
           <div
-            class="bg-dark-light rounded-xl overflow-hidden border-l-4 border-l-secondary border border-dark-lighter hover:scale-105 transition-all"
+            class="project-card w-full bg-transparent border-l-4 border-l-secondary border-b-2 border-dark-lighter"
           >
-            <div
-              class="h-48 bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center"
-            >
-              <div class="text-6xl text-secondary/50">📝</div>
-            </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">
-                Dynamic To-Do Management System
-              </h3>
-              <p class="text-gray-400 mb-4">
-                Task management system with real-time updates and user
-                authentication.
+              <h3 class="text-xl font-bold mb-2">Dynamic To-Do Manager</h3>
+              <p class="text-white/90 mb-4 leading-relaxed max-w-2xl">
+                A responsive task management application with real-time updates
+                using AJAX, built on JSP and Servlets with secure login and
+                comprehensive CRUD operations.
               </p>
-              <div class="flex space-x-2 mb-4">
+              <div class="flex flex-wrap gap-2">
                 <span
-                  class="bg-primary/20 text-primary px-2 py-1 rounded text-sm"
-                  >React</span
-                >
-                <span
-                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-sm"
-                  >CSS</span
-                >
-                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm"
+                  class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
                   >Java</span
                 >
+                <span
+                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs"
+                  >JSP</span
+                >
+                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs"
+                  >MySQL</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs"
+                  >AJAX</span
+                >
               </div>
-              <button
-                class="bg-secondary hover:bg-secondary/80 px-4 py-2 rounded transition-colors"
+            </div>
+
+            <!-- Overlay -->
+            <div
+              class="project-overlay"
+              onclick="window.open('https://github.com/NithinBairoju/TODO_webapp', '_blank')"
+            >
+              <div
+                class="github-link text-white px-8 py-4 rounded-lg text-xl font-bold flex items-center justify-between cursor-pointer transition-colors duration-200 w-full"
               >
-                View Project
-              </button>
+                <div class="flex items-center gap-3">
+                  <p class="text-4xl">View on GitHub</p>
+                </div>
+                <svg
+                  class="w-10 h-10 ml-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V8h7V6H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h7v-2z"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 4: Chat App -->
           <div
-            class="bg-dark-light rounded-xl overflow-hidden border-l-4 border-l-accent border border-dark-lighter hover:scale-105 transition-all"
+            class="project-card w-full bg-transparent border-l-4 border-l-primary"
           >
-            <div
-              class="h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center"
-            >
-              <div class="text-6xl text-accent/50">🌐</div>
-            </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Falcon Static Website</h3>
-              <p class="text-gray-400 mb-4">
-                Responsive, clean company site with interactive elements and
-                modern design.
+              <h3 class="text-xl font-bold mb-2">Real-Time Chat App</h3>
+              <p class="text-white/90 mb-6 leading-relaxed max-w-2xl">
+                A real-time messaging application supporting both group and
+                private chats with Socket.io and Node.js backend, enabling
+                instant communication and seamless user experience.
               </p>
-              <div class="flex space-x-2 mb-4">
+              <div class="flex flex-wrap gap-2">
                 <span
-                  class="bg-primary/20 text-primary px-2 py-1 rounded text-sm"
+                  class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
+                  >Node.js</span
+                >
+                <span
+                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs"
+                  >Socket.io</span
+                >
+                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs"
+                  >Express</span
+                >
+                <span
+                  class="bg-pink-500/20 text-pink-300 px-2 py-1 rounded text-xs"
                   >HTML/CSS</span
                 >
-                <span
-                  class="bg-secondary/20 text-secondary px-2 py-1 rounded text-sm"
-                  >JavaScript</span
-                >
-                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm"
-                  >Responsive Design</span
-                >
               </div>
-              <button
-                class="bg-accent hover:bg-accent/80 px-4 py-2 rounded transition-colors"
+            </div>
+
+            <!-- Overlay -->
+
+            <div
+              class="project-overlay"
+              onclick="window.open('https://github.com/NithinBairoju/anmchat', '_blank')"
+            >
+              <div
+                class="github-link text-white px-8 py-4 rounded-lg text-xl font-bold flex items-center justify-between cursor-pointer transition-colors duration-200 w-full"
               >
-                View Project
-              </button>
+                <div class="flex items-center gap-3">
+                  <p class="text-4xl">View on GitHub</p>
+                </div>
+                <svg
+                  class="w-10 h-10 ml-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V8h7V6H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h7v-2z"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -819,6 +1268,7 @@
             <!-- GitHub Card -->
             <div
               class="animate-float-1 social-card hover-glow github-hover bg-dark-light/30 p-6 rounded-2xl w-20 h-20 flex items-center justify-center cursor-pointer group"
+              onclick="window.open('https://github.com/NithinBairoju', '_blank')"
             >
               <svg
                 class="w-10 h-10 text-primary group-hover:text-purple-300 transition-colors duration-300"
@@ -834,6 +1284,7 @@
             <!-- LinkedIn Card -->
             <div
               class="animate-float-2 social-card hover-glow linkedin-hover bg-dark-light/30 p-6 rounded-2xl w-20 h-20 flex items-center justify-center cursor-pointer group"
+              onclick="window.open('https://www.linkedin.com/in/nithin-bairoju-155503243/', '_blank')"
             >
               <svg
                 class="w-10 h-10 text-secondary group-hover:text-cyan-300 transition-colors duration-300"
@@ -846,34 +1297,22 @@
               </svg>
             </div>
 
-            <!-- Twitter Card -->
-            <div
-              class="animate-float-3 social-card hover-glow twitter-hover bg-dark-light/30 p-6 rounded-2xl w-20 h-20 flex items-center justify-center cursor-pointer group"
-            >
-              <svg
-                class="w-10 h-10 text-accent group-hover:text-pink-300 transition-colors duration-300"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                />
-              </svg>
-            </div>
             <!-- Email Card -->
-            <div
-              class="animate-float-3 social-card hover-glow email-hover bg-dark-light/30 p-6 rounded-2xl w-20 h-20 flex items-center justify-center cursor-pointer group"
-            >
-              <svg
-                class="w-10 h-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300"
-                fill="currentColor"
-                viewBox="0 0 24 24"
+            <a href="mailto:nithinbairoju123@gmail.com">
+              <div
+                class="animate-float-3 social-card hover-glow twitter-hover bg-dark-light/30 p-6 rounded-2xl w-20 h-20 flex items-center justify-center cursor-pointer group"
               >
-                <path
-                  d="M12 13.065L1.5 6.75v10.5h21V6.75L12 13.065zM12 11.25L1.5 4.5h21L12 11.25z"
-                />
-              </svg>
-            </div>
+                <svg
+                  class="w-10 h-10 text-accent group-hover:text-pink-300 transition-colors duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 13.065L1.5 6.75v10.5h21V6.75L12 13.065zM12 11.25L1.5 4.5h21L12 11.25z"
+                  />
+                </svg>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -938,6 +1377,40 @@
         e.preventDefault();
         alert("Thank you for your message! I'll get back to you soon.");
         this.reset();
+      });
+    </script>
+    <script>
+      function toggleContactCard() {
+        const popup = document.getElementById("contactPopup");
+        const cardContent = popup.querySelector(".gradient-border");
+
+        if (popup.classList.contains("hidden")) {
+          popup.classList.remove("hidden");
+          cardContent.classList.remove("popup-exit");
+          cardContent.classList.add("popup-enter");
+        } else {
+          cardContent.classList.remove("popup-enter");
+          cardContent.classList.add("popup-exit");
+          setTimeout(() => {
+            popup.classList.add("hidden");
+          }, 200);
+        }
+      }
+
+      function closeIfClickedOutside(event) {
+        if (event.target === event.currentTarget) {
+          toggleContactCard();
+        }
+      }
+
+      // Close on Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          const popup = document.getElementById("contactPopup");
+          if (!popup.classList.contains("hidden")) {
+            toggleContactCard();
+          }
+        }
       });
     </script>
   </body>
