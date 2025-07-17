@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body::before {
+  user-select:none;
   content: "";
   position: fixed;
   inset: 0;
