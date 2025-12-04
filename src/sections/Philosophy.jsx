@@ -51,7 +51,7 @@ const Philosophy = () => {
           {principles.map((principle, index) => (
             <div 
               key={index}
-              className="group relative p-12 border-r border-b border-gray-800 hover:bg-gray-900/30 transition-colors duration-500"
+              className="group relative p-6 md:p-12 border-r border-b border-gray-800 hover:bg-gray-900/30 transition-colors duration-500"
             >
               <div className="flex flex-col h-full justify-between gap-12">
                 
@@ -60,10 +60,10 @@ const Philosophy = () => {
                   <span className="block font-outfit font-bold text-6xl text-transparent stroke-text mb-8 opacity-30 group-hover:opacity-100 group-hover:text-primary-lime group-hover:stroke-text-none transition-all duration-500">
                     {principle.id}
                   </span>
-                  <h3 className="text-4xl md:text-5xl font-outfit font-bold leading-none mb-2">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-outfit font-bold leading-none mb-2 break-words">
                     {principle.title}
                   </h3>
-                  <h3 className="text-4xl md:text-5xl font-outfit font-bold leading-none text-gray-600 group-hover:text-white transition-colors duration-500">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-outfit font-bold leading-none text-gray-600 group-hover:text-white transition-colors duration-500 break-words">
                     {principle.subtitle}
                   </h3>
                 </div>
@@ -71,7 +71,7 @@ const Philosophy = () => {
                 {/* Bottom: Description */}
                 <div className="relative">
                   <div className="w-12 h-[1px] bg-primary-lime mb-6 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                  <p className="text-gray-400 font-light text-lg leading-relaxed max-w-md group-hover:text-gray-300 transition-colors">
+                  <p className="text-gray-400 font-light text-sm md:text-base lg:text-lg leading-relaxed max-w-md group-hover:text-gray-300 transition-colors">
                     {principle.description}
                   </p>
                 </div>

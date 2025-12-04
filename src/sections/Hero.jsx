@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { ArrowDown, Linkedin, Github, FileText } from 'lucide-react';
 import heroImage from '../assets/hero_image.png';
 
 const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   // Scroll Animation for Text
   const { scrollY } = useScroll();
   const textX = useTransform(scrollY, [0, 1000], ["0%", "-50%"]);
@@ -40,12 +41,64 @@ const Hero = () => {
       {/* Top Nav */}
       <nav className="flex justify-between items-center z-50 relative">
         <span className="font-mono text-sm tracking-widest uppercase text-gray-400">© 2025</span>
-        <div className="flex gap-8 font-mono text-sm tracking-widest uppercase">
-          <a href="#work" className="hover:text-primary-lime transition-colors">Projects</a>
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-8 font-mono text-sm tracking-widest uppercase">
+          <a href="#projects" className="hover:text-primary-lime transition-colors">Projects</a>
           <a href="#story" className="hover:text-primary-lime transition-colors">About</a>
           <a href="#contact" className="hover:text-primary-lime transition-colors">Contact</a>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center z-50"
+          aria-label="Toggle menu"
+        >
+          <span 
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
+            }`}
+          ></span>
+          <span 
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1'
+            }`}
+          ></span>
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <motion.div
+        initial={{ x: '100%' }}
+        animate={{ x: isMenuOpen ? 0 : '100%' }}
+        transition={{ type: 'tween', duration: 0.3 }}
+        className="fixed inset-0 bg-blue-600 z-40 md:hidden flex flex-col items-center justify-center"
+      >
+        <div className="flex flex-col gap-8 text-center">
+          <a 
+            href="#projects" 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white font-mono text-2xl tracking-widest uppercase hover:text-primary-lime transition-colors"
+          >
+            Projects
+          </a>
+          <a 
+            href="#story" 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white font-mono text-2xl tracking-widest uppercase hover:text-primary-lime transition-colors"
+          >
+            About
+          </a>
+          <a 
+            href="#contact" 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white font-mono text-2xl tracking-widest uppercase hover:text-primary-lime transition-colors"
+          >
+            Contact
+          </a>
+        </div>
+      </motion.div>
 
       {/* Main Content - Layered Layout */}
       <div className="flex-1 relative flex items-center justify-center mt-10 md:mt-0 overflow-hidden">
