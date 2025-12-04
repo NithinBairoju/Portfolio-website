@@ -31,13 +31,16 @@ const Contact = () => {
         
         {/* Top Right: Contact Details */}
         <div className="flex flex-col items-end gap-2 text-right">
-            <div className="group flex items-center gap-2">
-                <a href={`mailto:${email}`} className="font-outfit text-lg md:text-xl hover:text-primary-lime transition-colors">
+            <div className="relative group">
+                <a 
+                    href={`mailto:${email}`} 
+                    className="font-outfit text-lg md:text-xl hover:text-primary-lime transition-all duration-200 inline-block group-hover:-translate-x-8"
+                >
                     {email}
                 </a>
                 <button
                     onClick={handleCopy}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-1.5 hover:bg-primary-lime/10 rounded"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-1.5 hover:bg-primary-lime/10 rounded"
                     title="Copy email"
                 >
                     {copied ? (
