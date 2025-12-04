@@ -143,7 +143,7 @@ const Hero = () => {
 
         {/* Socials / Left Bottom */}
         <div className="absolute bottom-8 left-6 z-50 flex flex-col gap-4">
-          <a href="https://linkedin.com/in/nithin-bairoju" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest">
+          <a href="https://www.linkedin.com/in/nithin-bairoju-155503243/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest">
             <Linkedin size={16} /> Linkedin
           </a>
           <a href="https://github.com/NithinBairoju" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest">

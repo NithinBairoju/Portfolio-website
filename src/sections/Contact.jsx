@@ -31,9 +31,22 @@ const Contact = () => {
         
         {/* Top Right: Contact Details */}
         <div className="flex flex-col items-end gap-2 text-right">
-            <a href={`mailto:${email}`} className="font-outfit text-lg md:text-xl hover:text-primary-lime transition-colors">
-                {email}
-            </a>
+            <div className="group flex items-center gap-2">
+                <a href={`mailto:${email}`} className="font-outfit text-lg md:text-xl hover:text-primary-lime transition-colors">
+                    {email}
+                </a>
+                <button
+                    onClick={handleCopy}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-1.5 hover:bg-primary-lime/10 rounded"
+                    title="Copy email"
+                >
+                    {copied ? (
+                        <Check size={18} className="text-primary-lime" />
+                    ) : (
+                        <Copy size={18} className="text-gray-400 hover:text-primary-lime" />
+                    )}
+                </button>
+            </div>
             <div className="flex gap-4 mt-2">
                 <a href="https://linkedin.com/in/nithin-bairoju" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-gray-400 hover:text-white uppercase tracking-widest transition-colors">
                     LINKEDIN
