@@ -149,7 +149,7 @@ const Hero = () => {
           <a href="https://github.com/NithinBairoju" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest">
             <Github size={16} /> Github
           </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest">
+          <a href="/NithinBairoju.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest">
             <FileText size={16} /> Resume
           </a>
         </div>
