@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import projectDashboard from '../assets/illustrations/project-dashboard.png';
+import upscBlog from '../assets/illustrations/upsc-blog.png';
+import backendArch from '../assets/illustrations/backend-arch.png';
 
 const Projects = () => {
   const projects = [
@@ -11,7 +14,7 @@ const Projects = () => {
       description: 'Backend serving AI workloads in production. Built to scale before it needed to.',
       tech: ['Spring Boot', 'Redis', 'Microservices'],
       link: 'https://app.xploar.ai',
-      image: '/src/assets/illustrations/project-dashboard.png'
+      image: projectDashboard
     },
     {
       id: '02',
@@ -20,7 +23,7 @@ const Projects = () => {
       description: 'AI content engine. Taught me how to work with LLMs without losing my mind.',
       tech: ['Java 21', 'Gemini API', 'React'],
       link: 'https://github.com/NithinBairoju/AIBolgger',
-      image: '/src/assets/illustrations/upsc-blog.png'
+      image: upscBlog
     },
     {
       id: '03',
@@ -29,7 +32,7 @@ const Projects = () => {
       description: 'Transaction system that handles money. Because nothing teaches security like real stakes.',
       tech: ['Spring Security', 'PostgreSQL', 'JWT'],
       link: 'https://github.com/NithinBairoju/tracw',
-      image: '/src/assets/illustrations/backend-arch.png'
+      image: backendArch
     }
   ];
 
