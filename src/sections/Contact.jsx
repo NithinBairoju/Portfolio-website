@@ -62,7 +62,7 @@ const Contact = () => {
 
         {/* Middle: Drop a Message */}
         <div className="py-12 lg:py-0">
-            <a href={`mailto:${email}`} className="group inline-flex items-center gap-2 font-mono text-lg text-white hover:text-primary-lime transition-colors">
+            <a href="https://linkedin.com/in/nithin-bairoju" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 font-mono text-lg text-white hover:text-primary-lime transition-colors">
                 DROP A MESSAGE <span className="text-primary-lime group-hover:translate-x-1 transition-transform">+</span>
             </a>
         </div>
