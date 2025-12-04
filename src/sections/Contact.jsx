@@ -17,17 +17,17 @@ const Contact = () => {
     <section id="contact" className="bg-primary-black text-white h-screen flex flex-col lg:flex-row relative overflow-hidden">
       
       {/* Left Column: Image */}
-      <div className="w-full lg:w-[40%] h-1/2 lg:h-full relative overflow-hidden grayscale contrast-125">
+      <div className="w-full lg:w-[40%] h-[60vh] lg:h-full relative overflow-hidden grayscale contrast-125">
         <img 
             src={heroImage} 
             alt="Nithin Bairoju"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-contain lg:object-cover object-center lg:object-top"
         />
         <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       {/* Right Column: Content */}
-      <div className="w-full lg:w-[60%] bg-primary-black p-8 lg:p-16 flex flex-col justify-between h-1/2 lg:h-full relative">
+      <div className="w-full lg:w-[60%] bg-primary-black p-8 lg:p-16 flex flex-col justify-between flex-1 lg:h-full relative">
         
         {/* Top Right: Contact Details */}
         <div className="flex flex-col items-end gap-2 text-right">
