@@ -1,84 +1,539 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#030303" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030303" />
+
+  <!-- Primary Meta Tags -->
+  <title>Nithin Bairoju | Digital Marketer & Growth Strategist</title>
+  <meta name="title" content="Nithin Bairoju | Digital Marketer & Growth Strategist" />
+  <meta name="description" content="Nithin Bairoju is a Digital Marketer & Growth Strategist specializing in Search-Intent SEO, Web Copywriting, Paid Acquisition, and Funnel Optimization." />
+  <meta name="keywords" content="Nithin Bairoju, Digital Marketer, Growth Strategist, Meta Ads, Google Ads, On-Page SEO, Conversion Copywriting, Web Design, Profile Next Career Services" />
+  <meta name="author" content="Nithin Bairoju" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="1yD2MBi7IlDW4l1sGBjFPtspP_HEPYGDw8NEGUVyJ84" />
+  <link rel="canonical" href="https://nithinbairoju.com/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nithinbairoju.com/" />
+  <meta property="og:title" content="Nithin Bairoju | Digital Marketer & Growth Strategist" />
+  <meta property="og:description" content="Solving acquisition & conversion problems with search intent, clear copy, and real funnel math." />
+  <meta property="og:image" content="https://nithinbairoju.com/og-image.png" />
+  <meta property="og:site_name" content="Nithin Bairoju Portfolio" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://nithinbairoju.com/" />
+  <meta property="twitter:title" content="Nithin Bairoju | Digital Marketer & Growth Strategist" />
+  <meta property="twitter:description" content="Solving acquisition & conversion problems with search intent, clear copy, and real funnel math." />
+  <meta property="twitter:image" content="https://nithinbairoju.com/og-image.png" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nithin Bairoju",
+    "jobTitle": "Digital Marketer & Growth Strategist",
+    "description": "Digital Marketer specializing in Meta & Google Ads, Search-Intent SEO, Conversion Web Design, and Content Strategy",
+    "url": "https://nithinbairoju.com",
+    "image": "https://nithinbairoju.com/og-image.png",
+    "email": "nithinbairoju123@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/thenithinbairoju/",
+      "https://linkedin.com/in/nithin-bairoju"
+    ]
+  }
+  </script>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <span class="nav-logo">© 2026 // DIGITAL MARKETER</span>
     
-    <!-- Primary Meta Tags -->
-    <title>Nithin Bairoju | Backend Architect & Java Spring Boot Expert</title>
-    <meta name="title" content="Nithin Bairoju | Backend Architect & Java Spring Boot Expert" />
-    <meta name="description" content="Nithin Bairoju is a Backend Architect specializing in Java, Spring Boot, and scalable system design. Building high-performance microservices and production systems with 99.9% uptime." />
-    <meta name="keywords" content="Nithin Bairoju, Backend Architect, Java Developer, Spring Boot Expert, System Design, Microservices, Scalable Systems, PostgreSQL, Redis, Docker, Software Engineer India" />
-    <meta name="author" content="Nithin Bairoju" />
-    <meta name="robots" content="index, follow" />
-    <meta name="google-site-verification" content="1yD2MBi7IlDW4l1sGBjFPtspP_HEPYGDw8NEGUVyJ84" />
-    <link rel="canonical" href="https://nithinbairoju.com/" />
+    <!-- Desktop Navigation Links -->
+    <div class="nav-links">
+      <a href="#problem" class="nav-link">PROBLEM</a>
+      <a href="#approach" class="nav-link">APPROACH</a>
+      <a href="#work" class="nav-link">WORK</a>
+      <a href="#capabilities" class="nav-link">CAPABILITIES</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </div>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nithinbairoju.com/" />
-    <meta property="og:title" content="Nithin Bairoju | Backend Architect & Java Spring Boot Expert" />
-    <meta property="og:description" content="Building scalable backend systems with Java Spring Boot. 99.9% uptime. Zero critical bugs. Architecting the future at Xploar.ai." />
-    <meta property="og:image" content="https://nithinbairoju.com/og-image.png" />
-    <meta property="og:site_name" content="Nithin Bairoju Portfolio" />
-    <meta property="og:locale" content="en_US" />
+    <!-- Mobile Hamburger Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://nithinbairoju.com/" />
-    <meta property="twitter:title" content="Nithin Bairoju | Backend Architect & Java Spring Boot Expert" />
-    <meta property="twitter:description" content="Building scalable backend systems with Java Spring Boot. 99.9% uptime. Zero critical bugs." />
-    <meta property="twitter:image" content="https://nithinbairoju.com/og-image.png" />
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <a href="#problem" class="mobile-nav-link">PROBLEM</a>
+    <a href="#approach" class="mobile-nav-link">APPROACH</a>
+    <a href="#work" class="mobile-nav-link">WORK</a>
+    <a href="#capabilities" class="mobile-nav-link">CAPABILITIES</a>
+    <a href="#contact" class="mobile-nav-link">CONTACT</a>
+  </div>
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Nithin Bairoju",
-      "jobTitle": "Backend Architect",
-      "description": "Backend Architect specializing in Java Spring Boot and scalable system design",
-      "url": "https://nithinbairoju.com",
-      "image": "https://nithinbairoju.com/og-image.png",
-      "email": "nithinbairoju123@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Telangana",
-        "addressCountry": "India"
-      },
-      "sameAs": [
-        "https://linkedin.com/in/nithin-bairoju",
-        "https://github.com/NithinBairoju"
-      ],
-      "knowsAbout": [
-        "Java",
-        "Spring Boot",
-        "System Design",
-        "Microservices Architecture",
-        "PostgreSQL",
-        "MySQL",
-        "Redis",
-        "Docker",
-        "Backend Development",
-        "API Design",
-        "Database Design"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Computer Science Engineering"
-      },
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Xploar.ai",
-        "url": "https://app.xploar.ai"
-      }
-    }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- 1. HERO SECTION (#hero) -->
+  <section class="hero-section" id="hero">
+    
+    <!-- Background Animated Text Marquee -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <h1 class="marquee-title">DIGITAL—MARKETER • META—ADS • SEO • WEB—DESIGN • </h1>
+        <h1 class="marquee-title">DIGITAL—MARKETER • META—ADS • SEO • WEB—DESIGN • </h1>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <!-- Centered Hero Image -->
+      <div class="hero-image-wrapper" id="heroImageWrapper">
+        <img src="assets/hero_image.png" alt="Nithin Bairoju - Digital Marketer & Growth Strategist" class="hero-image" />
+        <div class="hero-image-overlay"></div>
+      </div>
+
+      <!-- Floating Name & Positioning Block -->
+      <div class="hero-floating-name">
+        <h2>// NITHIN <br/>BAIROJU</h2>
+        <p class="hero-floating-role">Growth & Digital Marketer</p>
+        
+        <!-- Short Positioning Statement -->
+        <div class="hero-positioning-box">
+          <p class="hero-positioning-text">I ask what the customer actually did — not what the report said they might do.</p>
+          <span class="hero-positioning-pills">SEO · CONTENT · CONVERSION · PAID ACQUISITION</span>
+        </div>
+      </div>
+
+      <!-- Left Social Links -->
+      <div class="hero-socials">
+        <a href="https://www.instagram.com/thenithinbairoju/" target="_blank" rel="noopener noreferrer" class="social-item">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram
+        </a>
+        <a href="https://linkedin.com/in/nithin-bairoju" target="_blank" rel="noopener noreferrer" class="social-item">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:nithinbairoju123@gmail.com" class="social-item">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE PROBLEM SECTION (#problem) -->
+  <section class="story-section" id="problem">
+    <div class="story-content">
+      <span class="section-label">// The Problem</span>
+      <h2 class="story-heading">
+        Every founder I've talked to says the same thing — they paid someone for "strategy," got a report full of impressions and buzzwords, and still can't point to one sale that came from it. <span class="text-lime">Nobody ever showed them the math.</span>
+      </h2>
+      
+      <!-- Subtle Narrative Bridge -->
+      <div class="problem-narrative-bridge">
+        <span class="bridge-arrow">↓</span>
+        <span>SO BEFORE I BUILD ANYTHING, I ASK WHY.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HOW I APPROACH GROWTH (#approach) — 4-Step Framework -->
+  <section id="approach">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title-editorial">HOW I<br/><span class="text-lime">APPROACH IT</span></h2>
+        <div class="header-subtitle">// The Four Questions<br/>I Ask Every Time</div>
+      </div>
+
+      <div class="process-grid">
+        <!-- Step 01 -->
+        <div class="process-card">
+          <div class="process-card-top">
+            <span class="process-number stroke-text">01</span>
+            <span class="process-arrow">───→</span>
+          </div>
+          <div>
+            <h3 class="process-step-title">DIAGNOSE</h3>
+            <p class="process-desc">Uncover why clicks aren't converting, where trust is leaking, and where the lead math breaks down on existing pages.</p>
+          </div>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="process-card">
+          <div class="process-card-top">
+            <span class="process-number stroke-text">02</span>
+            <span class="process-arrow">───→</span>
+          </div>
+          <div>
+            <h3 class="process-step-title">BUILD</h3>
+            <p class="process-desc">Structure search-intent SEO pillars, high-converting landing pages, and sharp ad creatives tailored to real user intent.</p>
+          </div>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="process-card">
+          <div class="process-card-top">
+            <span class="process-number stroke-text">03</span>
+            <span class="process-arrow">───→</span>
+          </div>
+          <div>
+            <h3 class="process-step-title">MEASURE</h3>
+            <p class="process-desc">Track real lead behavior and conversion rates rather than hiding behind vanity impression reports.</p>
+          </div>
+        </div>
+
+        <!-- Step 04 -->
+        <div class="process-card">
+          <div class="process-card-top">
+            <span class="process-number stroke-text">04</span>
+            <span class="process-arrow">───→</span>
+          </div>
+          <div>
+            <h3 class="process-step-title">ITERATE</h3>
+            <p class="process-desc">A/B test headlines, copy hooks, and ad creatives to scale what actually works based on live performance data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SHOW ME TRANSITION SECTION -->
+  <section class="transition-section">
+    <div class="transition-container">
+      <span class="section-label" style="margin-bottom: 1rem;">// SELECTED WORK</span>
+      <h2 class="transition-title">
+        ENOUGH THINKING.<br/>
+        <span class="text-lime">HERE'S WHAT I'VE BUILT.</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- 5. SELECTED WORK (#work) — Featured ProfileNext Hero + Secondary Projects -->
+  <section id="work">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title-editorial">SELECTED <span class="text-lime">WORK</span></h2>
+        <div class="header-subtitle">// Case Studies<br/>& Experiments</div>
+      </div>
+
+      <p class="outcome-intro" style="margin-bottom: 3rem;">
+        A live client website rebuilt from scratch. A personal brand built on original analysis. A content system that still runs. None of it was hypothetical.
+      </p>
+
+      <!-- 5A. FEATURED HERO CASE STUDY: ProfileNext -->
+      <div class="featured-case-study">
+        <div class="featured-meta-strip">
+          <span>01 // FEATURED HERO CASE STUDY</span>
+          <span>LIVE CLIENT · WEB & SEO OVERHAUL</span>
+        </div>
+
+        <h3 class="featured-title">PROFILE NEXT</h3>
+
+        <div class="featured-image-container">
+          <img src="assets/profile-next-website.jpg" alt="Profile Next Web Design and SEO Case Study" />
+          <div class="featured-image-badge">BEFORE → AFTER SYSTEM</div>
+        </div>
+
+        <div class="featured-breakdown-grid">
+          <div class="breakdown-box">
+            <span class="breakdown-label">// PROBLEM</span>
+            <p class="breakdown-text">No SEO structure and no content roadmap. Generic messaging failed to reach senior candidates.</p>
+          </div>
+          <div class="breakdown-box">
+            <span class="breakdown-label">// APPROACH</span>
+            <p class="breakdown-text">Targeted the 4+ years experience audience specifically with search-intent keywords and clear copy.</p>
+          </div>
+          <div class="breakdown-box">
+            <span class="breakdown-label">// BUILD</span>
+            <p class="breakdown-text">Rebuilt on-page SEO schema, rewrote homepage/FAQ copy, mapped 7 content pillars (58 posts).</p>
+          </div>
+          <div class="breakdown-box">
+            <span class="breakdown-label">// STATUS</span>
+            <p class="breakdown-text">Live indexing & initial GSC ranking build. Google Business Profile optimization next.</p>
+          </div>
+        </div>
+
+        <button class="btn-deep-dive" id="openModalBtn">
+          <span>READ FULL CASE STUDY DEEP DIVE</span> <span>→</span>
+        </button>
+      </div>
+
+      <!-- 5B. SECONDARY PROJECTS GRID -->
+      <div class="secondary-projects-grid">
+        
+        <!-- Case Study 2: Instagram Brand -->
+        <a href="https://www.instagram.com/thenithinbairoju/" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="project-img-bg">
+            <img src="assets/instagram-strategy-card.png" alt="Instagram Social Media Growth and Strategy" />
+          </div>
+          <div class="project-overlay"></div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-id stroke-text-white">02</span>
+              <div class="project-tags">
+                <span class="tag">Social Media</span>
+                <span class="tag">Content Strategy</span>
+                <span class="tag">Visual Branding</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <h3 class="project-bottom-h3">
+                INSTAGRAM<br/>
+                <span class="project-subtitle">@thenithinbairoju</span>
+              </h3>
+              <div class="project-divider"></div>
+              <div class="project-meta-flex">
+                <p class="project-desc">Six months of case-study reels, built from zero — each one breaking down a real brand's strategy instead of repeating generic marketing tips.</p>
+                <div class="project-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Case Study 3: Website Audits -->
+        <a href="#contact" class="project-card">
+          <div class="project-img-bg">
+            <img src="assets/digital-marketing-dashboard.png" alt="Website Audits UX and Copy Review" />
+          </div>
+          <div class="project-overlay"></div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-id stroke-text-white">03</span>
+              <div class="project-tags">
+                <span class="tag">UX Review</span>
+                <span class="tag">Copy Audit</span>
+                <span class="tag">Conversion Principles</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <h3 class="project-bottom-h3">
+                WEBSITE AUDITS<br/>
+                <span class="project-subtitle">UX & Copy Review</span>
+              </h3>
+              <div class="project-divider"></div>
+              <div class="project-meta-flex">
+                <p class="project-desc">Line-by-line breakdowns of what a landing page is losing in trust, clarity, or conversion — and what I'd change first.</p>
+                <div class="project-icon-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Small Subtext at the end of Work -->
+      <p class="outcome-footer-subtext">
+        Paid acquisition is an active area of hands-on learning — not a polished case study yet. I'd rather tell you what I'm testing than pretend I've already mastered it.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- 6. CAPABILITIES SECTION (#capabilities) — 4 Customer Journey Categories -->
+  <section id="capabilities">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title-editorial">GROWTH <span class="text-lime">CAPABILITIES</span></h2>
+        <div class="header-subtitle">// Customer Journey<br/>Toolkit</div>
+      </div>
+
+      <div class="skills-grid-4">
+        
+        <!-- Category 01: ACQUIRE -->
+        <div class="skill-card">
+          <div>
+            <span class="skill-id stroke-text">01</span>
+            <h3 class="skill-category-title">ACQUIRE — PAID ADS</h3>
+          </div>
+          <div class="skill-tags-flex">
+            <span class="skill-pill">Meta Ads (FB & IG)</span>
+            <span class="skill-pill">Google Search Ads</span>
+            <span class="skill-pill">Retargeting Funnels</span>
+            <span class="skill-pill">Audience Targeting</span>
+          </div>
+          <p class="skill-note">* Currently building deeper hands-on campaign experience</p>
+        </div>
+
+        <!-- Category 02: ATTRACT -->
+        <div class="skill-card">
+          <div>
+            <span class="skill-id stroke-text">02</span>
+            <h3 class="skill-category-title">ATTRACT — SEO & CONTENT</h3>
+          </div>
+          <div class="skill-tags-flex">
+            <span class="skill-pill">On-Page SEO</span>
+            <span class="skill-pill">Keyword Research</span>
+            <span class="skill-pill">Search-Intent Blogging</span>
+            <span class="skill-pill">Content Pillars & Calendars</span>
+            <span class="skill-pill">Technical SEO Schema</span>
+          </div>
+        </div>
+
+        <!-- Category 03: CONVERT -->
+        <div class="skill-card">
+          <div>
+            <span class="skill-id stroke-text">03</span>
+            <h3 class="skill-category-title">CONVERT — WEBSITE & COPY</h3>
+          </div>
+          <div class="skill-tags-flex">
+            <span class="skill-pill">Conversion UI/UX</span>
+            <span class="skill-pill">Landing Page Structure</span>
+            <span class="skill-pill">Persuasive Copywriting</span>
+            <span class="skill-pill">Brand Messaging</span>
+            <span class="skill-pill">Responsive Layouts</span>
+          </div>
+        </div>
+
+        <!-- Category 04: OPTIMIZE -->
+        <div class="skill-card">
+          <div>
+            <span class="skill-id stroke-text">04</span>
+            <h3 class="skill-category-title">OPTIMIZE — CRO & TESTING</h3>
+          </div>
+          <div class="skill-tags-flex">
+            <span class="skill-pill">Landing Page Audits</span>
+            <span class="skill-pill">Friction Point Analysis</span>
+            <span class="skill-pill">Headline & Hook Testing</span>
+            <span class="skill-pill">User Behavior Analysis</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 8. WORKING PRINCIPLE SECTION (#principle) -->
+  <section class="principle-section" id="principle">
+    <div class="section-container">
+      <span class="section-label">// How I Think When Something Isn't Working</span>
+
+      <div class="principle-editorial-grid">
+        <div class="principle-left-col">
+          <h2 class="principle-big-statement">
+            MARKETING
+            SHOULDN'T
+            NEED AN
+            <span class="text-lime">EXCUSE.</span>
+          </h2>
+        </div>
+
+        <div class="principle-right-col">
+          <div class="principle-steps-list">
+            <div class="principle-step">A campaign isn't converting?<br/><span style="color: var(--text-muted); font-weight: 300;">Find the bottleneck — copy, audience, or offer.</span></div>
+            <div class="principle-step">A page isn't ranking?<br/><span style="color: var(--text-muted); font-weight: 300;">Understand what keyword intent is actually being searched.</span></div>
+            <div class="principle-step">Content isn't holding attention?<br/><span style="color: var(--text-muted); font-weight: 300;">Look at where people leave — not what you assumed they'd read.</span></div>
+          </div>
+
+          <p class="principle-human-text">
+            Most marketing problems aren't creative problems. They're clarity problems. Someone, somewhere, didn't understand what they were supposed to do next.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTACT SECTION (#contact) — Dual Path Choice -->
+  <section class="contact-section" id="contact">
+    <div class="contact-left-col">
+      <img src="assets/contact.png" alt="Nithin Bairoju - Digital Marketer & Growth Strategist" />
+    </div>
+
+    <div class="contact-right-col">
+      <div class="contact-top-details">
+        <span class="section-label" style="margin-bottom: 0.5rem;">// GET IN TOUCH</span>
+        <div class="email-copy-wrapper">
+          <a href="mailto:nithinbairoju123@gmail.com" class="email-link" id="emailLink">nithinbairoju123@gmail.com</a>
+          <button class="btn-copy-email" id="emailCopyBtn" title="Copy email address">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+        <div class="contact-social-links">
+          <a href="https://www.instagram.com/thenithinbairoju/" target="_blank" rel="noopener noreferrer" class="contact-social-link">INSTAGRAM</a>
+          <a href="https://linkedin.com/in/nithin-bairoju" target="_blank" rel="noopener noreferrer" class="contact-social-link">LINKEDIN</a>
+        </div>
+      </div>
+
+      <div class="contact-middle-cta">
+        <span class="section-label" style="margin-bottom: 0.5rem;">// WHAT BRINGS YOU HERE?</span>
+        
+        <div class="contact-dual-buttons">
+          <a href="mailto:nithinbairoju123@gmail.com?subject=Full-time%20Marketing%20Role" class="btn-contact-choice">
+            <span>I'M HIRING A MARKETER</span>
+            <span>→</span>
+          </a>
+          <a href="mailto:nithinbairoju123@gmail.com?subject=Freelance%20Marketing%20Query" class="btn-contact-choice">
+            <span>I NEED MARKETING HELP</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-bottom-title">
+        <h2 class="contact-heading-massive">LET'S<br/><span class="text-lime">TALK</span></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CASE STUDY DEEP DIVE MODAL -->
+  <div class="modal-overlay" id="caseStudyModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      
+      <span class="modal-header-tag">// CASE STUDY / 01 DEEP DIVE</span>
+      <h2 class="modal-title">PROFILE NEXT CAREER SERVICES</h2>
+      
+      <div class="modal-section">
+        <div class="modal-section-title">THE PROBLEM</div>
+        <p class="modal-text">The existing site lacked clear SEO structure, had no content pillars, and used generic jobseeker messaging that failed to appeal to experienced candidates (4+ years exp).</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">WHAT I FOUND</div>
+        <p class="modal-text">Keyword research revealed a high-intent search volume gap for executive resume writing and career transition services specifically targeting mid-to-senior professionals in India.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">WHAT I CHANGED</div>
+        <p class="modal-text">Rebuilt the on-page SEO metadata, canonicals, and Schema.org tags. Rewrote homepage and FAQ copy end-to-end around mid-career transition pain points. Mapped a 7-pillar content calendar containing 58 search-optimized blog topics.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">THE SYSTEM</div>
+        <p class="modal-text">Keyword Cluster → On-Page Schema → Content Pillars → Targeted Landing Page Conversion.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">WHAT I LEARNED</div>
+        <p class="modal-text">Addressing specific reader intent directly in the headline converts far better than general promises. SEO and copywriting must be designed together from day one.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-copied" id="toastCopied">Email copied to clipboard!</div>
+
+  <!-- Internal JavaScript -->
+  <script src="script.js"></script>
+</body>
 </html>
